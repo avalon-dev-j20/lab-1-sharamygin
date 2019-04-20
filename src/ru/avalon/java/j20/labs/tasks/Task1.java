@@ -26,8 +26,9 @@ public class Task1 implements Task {
     public void run() {
         int[] array = arrayFactory.getInstance(20);
         Number arr[] = new Number[array.length];
-        for (int i=0; i<array.length; i++){
-            arr[i+1] = array[i]; 
+        int i = 0;
+        for (int value: array){
+            arr[i++] = value; 
         }
         int min = Numbers.min(arr).intValue();
         int max = Numbers.max(arr).intValue();

@@ -36,11 +36,15 @@ public class Task3 implements Task {
          * 4. С использованием отладчика проверьте корректность
          *    выполнения задания.
          */
-        
+        /*
         Fibonacci fibonacci = new Fibonacci(20);
         int fibonacciSum = 0;
         for(int value : fibonacci){
-            fibonacciSum += value;
+        fibonacciSum += value;
         }
+*/
+       Fibonacci demoFibo = new Fibonacci(20);
+       int fiboArraySum = Arrays.stream(Fibonacci.fibonacciArray).sum();
+
     }
 }

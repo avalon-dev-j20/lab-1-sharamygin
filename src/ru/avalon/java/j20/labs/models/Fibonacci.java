@@ -21,22 +21,21 @@ import java.util.List;
 public class Fibonacci implements Iterable<Integer> {
 
     public static List<Integer> fibonacciList = new ArrayList<>();
-
     public static int[] fibonacciArray;
 
-    public Fibonacci(int size) {
-        fibonacciArray = fibonacciInitializer(size);
+    public Fibonacci(int length) {
+        fibonacciArray = fibonacciInitializer(length);
         for (int i : fibonacciArray) {
             fibonacciList.add(i);
         }
     }
 
-    private int[] fibonacciInitializer(int size) {
-        int[] array = new int[size];
+    private int[] fibonacciInitializer(int length) {
+        int[] array = new int[length];
         array[0] = 0;
         array[1] = 1;
         for (int i = 2; i < array.length; i++) {
-            array[i] = array[i - 1] + array[i - 2];
+            array[i] = array[i - 2] + array[i - 1];
         }
         return array;
     }
@@ -68,7 +67,7 @@ public class Fibonacci implements Iterable<Integer> {
         @Override
         public Integer next() {
          pos++;
-         return pos < fibonacciArray.length ? fibonacciArray[pos+1] : null;
+         return pos < fibonacciArray.length ? fibonacciArray[pos + 1] : null;
         }
     }
 
