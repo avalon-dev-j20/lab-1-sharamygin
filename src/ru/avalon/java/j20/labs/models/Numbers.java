@@ -14,9 +14,11 @@ public final class Numbers {
      * @param values массив чисел
      * @return сумма элементов массива
      */
-    public static int sum(int[] values) {
-        int sum = 0;
-        for (int value : values) sum += value;
+    public static double sum(Number... values) {
+        double sum = 0;
+        for (Number value : values) {
+            sum += value.doubleValue();
+        }
         return sum;
     }
 
@@ -27,7 +29,7 @@ public final class Numbers {
      * @param values массив значений
      * @return среднее арифметическое с точностью до типа {@code double}.
      */
-    public static double avg(int[] values) {
+    public static double avg(Number... values) {
         return (double) sum(values) / values.length;
     }
 
@@ -38,8 +40,8 @@ public final class Numbers {
      * @param b второе значение
      * @return большее из двух значений
      */
-    public static int max(int a, int b) {
-        return a > b ? a : b;
+    public static Number max(Number a, Number b) {
+        return a.doubleValue() > b.doubleValue() ? a : b;
     }
 
     /**
@@ -48,8 +50,8 @@ public final class Numbers {
      * @param values массив значений
      * @return максимальное значение массива
      */
-    public static int max(int[] values) {
-        int result = values[0];
+    public static Number max(Number... values) {
+        Number result = values[0];
         for (int i = 1; i < values.length; i++) {
             result = max(result, values[i]);
         }
@@ -63,8 +65,8 @@ public final class Numbers {
      * @param b второе значение
      * @return меньшее из дух значений
      */
-    public static int min(int a, int b) {
-        return a < b ? a : b;
+    public static Number min(Number a, Number b) {
+        return a.doubleValue() < b.doubleValue() ? a : b;
     }
 
     /**
@@ -73,8 +75,8 @@ public final class Numbers {
      * @param values массив значений
      * @return минимальное значение массива
      */
-    public static int min(int[] values) {
-        int result = values[0];
+    public static Number min(Number... values) {
+        Number result = values[0];
         for (int i = 1; i < values.length; i++) {
             result = min(result, values[i]);
         }
